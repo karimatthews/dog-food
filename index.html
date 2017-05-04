@@ -1,0 +1,61 @@
+<html>
+  <head>
+    <title> Advice for changing you dog's food </title>
+  <head>
+
+  <body>
+    <!-- Set up tabs -->
+    <div class="tab">
+      <button class="tablinks" onclick="openTab(event, 'About')">About</button>
+      <button id="defaultOpen" class="tablinks" onclick="openTab(event, 'Calculator')">Calculator</button>
+      <button class="tablinks" onclick="openTab(event, 'Treat ideas')">Treat ideas</button>
+    </div>
+
+    <div id="About" class="tabcontent">
+      <h3>About</h3>
+      <p>
+        This handy tool will help you change your dog's food over a set period of time.
+      </p>
+    </div>
+
+    <div id="Calculator" class="tabcontent">
+
+      <h3>Calculator</h3>
+
+      <div id="inputs">
+        <p>Transition Period (Days)</p>
+        <input  id="transitionPeriod" type = number >
+
+        <p>Old food (daily intake)</p>
+        <input  id="oldFood" >
+
+        <p>New food (daily intake)</p>
+        <input  id="newFood" >
+
+
+      </div>
+
+      <button class = "submit" onclick = "addRow()">Submit</button>
+
+      <div id="table">
+        <table id = "foodTable"  style="width:100%">
+          <tr>
+            <th>Day</th>
+            <th>Old Food</th>
+            <th>New Food</th>
+          </tr>
+        </table>
+      </div>
+
+    </div>
+
+    <div id="Treat ideas" class="tabcontent">
+      <h3>Treat ideas</h3>
+      <p>fooood</p>
+    </div>
+
+  </body>
+
+  <link href="styles.css" rel="stylesheet">
+  <script src="app.js"> </script>
+</html>
