@@ -28,6 +28,23 @@ function addRow() {
   // Find a <table> element with id="myTable":
   var table = document.getElementById("foodTable");
 
+  //clear old data
+
+
+
+  var numberRows = document.getElementById('foodTable').rows.length - 1;
+
+  function deleteRows() {
+    for (i = numberRows; i > 0; i = i - 1) {
+      document.getElementById("foodTable").deleteRow(i)
+
+    }
+  }
+
+  if (numberRows > 1) {
+    deleteRows()
+  }
+
   //define variables from inputs
   var days = document.getElementById('transitionPeriod').value
   var newTotalAmount = document.getElementById('newFood').value
@@ -50,5 +67,8 @@ function addRow() {
     cell1.innerHTML = i;
     cell2.innerHTML = oldAmount;
     cell3.innerHTML = newAmount;
+
+    var numberRows = document.getElementById('foodTable').rows.length;
+  
   }
 }
