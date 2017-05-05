@@ -1,19 +1,25 @@
 html {
   background-color: black;
   font-family: sans-serif;
+  /*padding: 0; */
 }
 
 body {
   background-color: black;
   color: white;
+  margin: 0px;
+  padding: 0;
 }
 
 
 /* Style the tab */
 div.tab {
     overflow: hidden;
-    border: 1px solid #ccc;
+    /*border: 1px solid #ccc;*/
     background-color: #f1f1f1;
+    width: 100%;
+    margin: 0px;
+    padding: 0;
 }
 
 /* Style the buttons inside the tab */
@@ -41,24 +47,37 @@ div.tab button.active {
 .tabcontent {
     display: none;
     padding: 6px 12px;
-    border: 1px solid #ccc;
+    border: none;
     border-top: none;
 }
 
 
+
 input {
-  width:auto;
+  width: 100px;
+  text-align: left;
+}
+
+.dayNumber {
+  /*text-align: center;*/
 }
 
 .submit {
   margin-top: 30px;
 }
 
-
-#table {
-  padding: 50px;
+.dayColumn {
+  width: 50px;
 }
 
-th, td {
+table {
+  margin: 50px;
+  border-collapse: collapse;
+  width: 700px;
+}
+
+th, td, table {
     border: 1px solid white;
+    padding: 5px;
+    text-align: center;
 }

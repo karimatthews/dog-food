@@ -19,9 +19,11 @@ function openTab(evt, tabName) {
     evt.currentTarget.className += " active";
 }
 
+
 // Get the element with id="defaultOpen" and click on it
 document.getElementById("defaultOpen").click();
 
+document.getElementById("transitionPeriod").focus();
 
 //create a function that adds a row to the table
 function addRow() {
@@ -29,15 +31,11 @@ function addRow() {
   var table = document.getElementById("foodTable");
 
   //clear old data
-
-
-
   var numberRows = document.getElementById('foodTable').rows.length - 1;
 
   function deleteRows() {
     for (i = numberRows; i > 0; i = i - 1) {
       document.getElementById("foodTable").deleteRow(i)
-
     }
   }
 
@@ -54,21 +52,22 @@ function addRow() {
     // Create an empty <tr> element and add it to the 1st position of the table:
     var row = table.insertRow(i + 1);
 
-    var oldAmount = oldTotalAmount / days * (days-i)
-    var newAmount = newTotalAmount / days * (i)
+    var oldAmount = Math.round(oldTotalAmount / days * (days-i))
+    var newAmount = Math.round(newTotalAmount / days * (i))
 
 
     // Insert new cells (<td> elements) at the 1st and 2nd position of the "new" <tr> element:
     var cell1 = row.insertCell(0);
+    cell1.className = "dayNumber"
     var cell2 = row.insertCell(1);
     var cell3 = row.insertCell(2);
 
     // Add some text to the new cells:
     cell1.innerHTML = i;
-    cell2.innerHTML = oldAmount;
-    cell3.innerHTML = newAmount;
+    cell2.innerHTML = oldAmount + "   g";
+    cell3.innerHTML = newAmount + "  g";
 
     var numberRows = document.getElementById('foodTable').rows.length;
-  
+
   }
 }

@@ -18,35 +18,32 @@
       </p>
     </div>
 
-    <div id="Calculator" class="tabcontent">
 
+    <div id="Calculator" class="tabcontent">
       <h3>Calculator</h3>
 
       <div id="inputs">
-        <p>Transition Period (Days)</p>
-        <input  id="transitionPeriod" type = number >
+        <p>Transition Period</p>
+        <input  id="transitionPeriod" type = number > <span style="margin-left:10px;">days</span>
 
         <p>Old food (daily intake)</p>
-        <input  id="oldFood" >
+        <input  id="oldFood" type = number><span style="margin-left:10px;">grams</span>
 
         <p>New food (daily intake)</p>
-        <input  id="newFood" >
-
-
+        <input  id="newFood" type = number><span style="margin-left:10px;">grams</span>
       </div>
 
       <button class = "submit" onclick = "addRow()">Submit</button>
 
       <div id="table">
-        <table id = "foodTable"  style="width:100%">
+        <table id = "foodTable">
           <tr>
-            <th>Day</th>
+            <th class="dayColumn">Day</th>
             <th>Old Food</th>
             <th>New Food</th>
           </tr>
         </table>
       </div>
-
     </div>
 
     <div id="Treat ideas" class="tabcontent">
