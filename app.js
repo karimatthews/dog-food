@@ -26,7 +26,7 @@ document.getElementById("defaultOpen").click();
 document.getElementById("transitionPeriod").focus();
 
 //create a function that adds a row to the table
-function addRow() {
+function addTable() {
   // Find a <table> element with id="myTable":
   var table = document.getElementById("foodTable");
 
@@ -34,27 +34,43 @@ function addRow() {
   var numberRows = document.getElementById('foodTable').rows.length - 1;
 
   function deleteRows() {
-    for (i = numberRows; i > 0; i = i - 1) {
+    for (i = numberRows; i > -1; i = i - 1) {
       document.getElementById("foodTable").deleteRow(i)
     }
   }
 
-  if (numberRows > 1) {
+  if (numberRows > 0) {
     deleteRows()
   }
 
   //define variables from inputs
-  var days = document.getElementById('transitionPeriod').value
+  if (document.getElementById("dayButton").checked == true) {
+    var days = document.getElementById('transitionPeriod').value
+  } else {
+    var days = 7 * (document.getElementById('transitionPeriod').value)
+  }
+
   var newTotalAmount = document.getElementById('newFood').value
   var oldTotalAmount = document.getElementById('oldFood').value
+
+  //insert the heading for the table
+  if (days > 0) {
+    headRow = table.insertRow(0)
+    // Insert new cells (<td> elements) at the 1st and 2nd position of the "new" <tr> element:
+    var head1 = headRow.insertCell(0);
+    var head2 = headRow.insertCell(1);
+    var head3 = headRow.insertCell(2);
+    // Add some text to the new cells:
+    head1.innerHTML = "Day";
+    head2.innerHTML = "Old Food";
+    head3.innerHTML = "New Food";
+  }
 
   for (i = 0; i <= days; i++) {
     // Create an empty <tr> element and add it to the 1st position of the table:
     var row = table.insertRow(i + 1);
-
     var oldAmount = Math.round(oldTotalAmount / days * (days-i))
     var newAmount = Math.round(newTotalAmount / days * (i))
-
 
     // Insert new cells (<td> elements) at the 1st and 2nd position of the "new" <tr> element:
     var cell1 = row.insertCell(0);
@@ -66,8 +82,5 @@ function addRow() {
     cell1.innerHTML = i;
     cell2.innerHTML = oldAmount + "   g";
     cell3.innerHTML = newAmount + "  g";
-
-    var numberRows = document.getElementById('foodTable').rows.length;
-
   }
 }

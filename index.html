@@ -22,27 +22,25 @@
     <div id="Calculator" class="tabcontent">
       <h3>Calculator</h3>
 
-      <div id="inputs">
+      <!-- <form> -->
         <p>Transition Period</p>
-        <input  id="transitionPeriod" type = number > <span style="margin-left:10px;">days</span>
+        <input  id = "transitionPeriod" type = number placeholder = 0 min="0">
+        <input id = "dayButton" type = "radio" value="days" name="time"> days
+        <input id = "weekButton" type = "radio" value="weeks" name="time"> weeks
 
         <p>Old food (daily intake)</p>
-        <input  id="oldFood" type = number><span style="margin-left:10px;">grams</span>
+        <input  id="oldFood" type = number placeholder = 0 min="0"><span style="margin-left:10px;">grams</span>
 
         <p>New food (daily intake)</p>
-        <input  id="newFood" type = number><span style="margin-left:10px;">grams</span>
-      </div>
+        <input  id="newFood" type = number placeholder = 0 min="0"><span style="margin-left:10px;">grams</span><br>
 
-      <button class = "submit" onclick = "addRow()">Submit</button>
+          <button class = "submit" onclick = "addTable()">Submit</button>
+      <!-- </form> -->
+
+
 
       <div id="table">
-        <table id = "foodTable">
-          <tr>
-            <th class="dayColumn">Day</th>
-            <th>Old Food</th>
-            <th>New Food</th>
-          </tr>
-        </table>
+        <table id = "foodTable"></table>
       </div>
     </div>
 
