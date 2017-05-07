@@ -4,13 +4,14 @@
   <head>
 
   <body>
+    <!-- <div class="background-image"> </div> -->
     <!-- Set up tabs -->
     <div class="tab">
-      <button class="tablinks" onclick="openTab(event, 'About')">About</button>
+      <button id = "firstTab" class="tablinks" onclick="openTab(event, 'About')">About</button>
       <button id="defaultOpen" class="tablinks" onclick="openTab(event, 'Calculator')">Calculator</button>
     </div>
 
-    
+
 
     <div id="About" class="tabcontent">
       <div class = "aboutText">
@@ -24,9 +25,11 @@
 
 
     <div id="Calculator" class="tabcontent">
-      <h2>Calculator</h2>
+
+
       <div class = "calc">
         <div id="calcInput">
+          <h2>Calculator</h2>
           <span>Transition Period</span><br>
           <div class="tP">
             <input  id = "transitionPeriod" type ="number" value = 1 min="0">
