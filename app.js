@@ -1,3 +1,6 @@
+document.getElementById("transitionPeriod").focus();
+
+
 function openTab(evt, tabName) {
     // Declare all variables
     var i, tabcontent, tablinks;
@@ -55,8 +58,11 @@ function addTable() {
 
   //insert the heading for the table
   if (days > 0) {
-    headRow = table.insertRow(0)
-    // Insert new cells (<td> elements) at the 1st and 2nd position of the "new" <tr> element:
+    header = table.createTHead();
+
+    // Create an empty <tr> element and add it to the first position of <thead>:
+    var headRow = header.insertRow(0);
+    // Insert new cells (<th> elements) at the 1st and 2nd position of the "new" <tr> element:
     var head1 = headRow.insertCell(0);
     var head2 = headRow.insertCell(1);
     var head3 = headRow.insertCell(2);
@@ -66,9 +72,11 @@ function addTable() {
     head3.innerHTML = "New Food";
   }
 
+  //create emmpty body element
+  body = table.appendChild(document.createElement('tbody'));
   for (i = 0; i <= days; i++) {
     // Create an empty <tr> element and add it to the 1st position of the table:
-    var row = table.insertRow(i + 1);
+    var row = body.insertRow(i);
     var oldAmount = Math.round(oldTotalAmount / days * (days-i))
     var newAmount = Math.round(newTotalAmount / days * (i))
 
@@ -83,4 +91,5 @@ function addTable() {
     cell2.innerHTML = oldAmount + "   g";
     cell3.innerHTML = newAmount + "  g";
   }
+
 }

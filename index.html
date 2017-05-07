@@ -8,46 +8,52 @@
     <div class="tab">
       <button class="tablinks" onclick="openTab(event, 'About')">About</button>
       <button id="defaultOpen" class="tablinks" onclick="openTab(event, 'Calculator')">Calculator</button>
-      <button class="tablinks" onclick="openTab(event, 'Treat ideas')">Treat ideas</button>
     </div>
+
+    
 
     <div id="About" class="tabcontent">
-      <h3>About</h3>
-      <p>
-        This handy tool will help you change your dog's food over a set period of time.
-      </p>
-    </div>
-
-
-    <div id="Calculator" class="tabcontent">
-      <h3>Calculator</h3>
-
-      <!-- <form> -->
-        <p>Transition Period</p>
-        <input  id = "transitionPeriod" type = number placeholder = 0 min="0">
-        <input id = "dayButton" type = "radio" value="days" name="time"> days
-        <input id = "weekButton" type = "radio" value="weeks" name="time"> weeks
-
-        <p>Old food (daily intake)</p>
-        <input  id="oldFood" type = number placeholder = 0 min="0"><span style="margin-left:10px;">grams</span>
-
-        <p>New food (daily intake)</p>
-        <input  id="newFood" type = number placeholder = 0 min="0"><span style="margin-left:10px;">grams</span><br>
-
-          <button class = "submit" onclick = "addTable()">Submit</button>
-      <!-- </form> -->
-
-
-
-      <div id="table">
-        <table id = "foodTable"></table>
+      <div class = "aboutText">
+        <h3>About</h3>
+        <p>
+          This handy tool will help you change your dog's food over a set period of time.
+        </p>
       </div>
     </div>
 
-    <div id="Treat ideas" class="tabcontent">
-      <h3>Treat ideas</h3>
-      <p>fooood</p>
+
+
+    <div id="Calculator" class="tabcontent">
+      <h2>Calculator</h2>
+      <div class = "calc">
+        <div id="calcInput">
+          <span>Transition Period</span><br>
+          <div class="tP">
+            <input  id = "transitionPeriod" type ="number" value = 1 min="0">
+            <input id = "dayButton" class = "button" type = "radio" value="days" name="time" tabindex=-1> days
+            <input id = "weekButton" class = "button" type = "radio" value="weeks" name="time" checked tabindex=-1> week(s)<br>
+          </div>
+          <br>
+          <span>Old food (daily intake)</span><br>
+          <div class = "oF">
+            <input  id="oldFood" type="number" placeholder = 0 min="0"><span style="margin-left:10px;">grams</span><br>
+          </div>
+          <br>
+          <span>New food (daily intake)</span><br>
+          <div class = "nF">
+            <input  id="newFood" type ="number" placeholder = 0 min="0"><span style="margin-left:10px;">grams</span><br>
+          </div>
+
+          <button class = "submit" onclick = "addTable()">Submit</button>
+        </div>
+
+        <div id="table">
+          <table id = "foodTable"></table>
+        </div>
+      </div>
     </div>
+
+
 
   </body>
 

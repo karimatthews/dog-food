@@ -1,22 +1,68 @@
+/*
+COLOUR NOTES
+Charcoal      #373737
+Paper         #f4f4f4
+Silk          #DCD0C0
+Pale Gold     #C0B283
+*/
+
+
 html {
-  background-color: black;
+  background-color: #f4f4f4; /*Paper*/
   font-family: sans-serif;
+  font-size: 18px;
   /*padding: 0; */
 }
 
 body {
-  background-color: black;
+  background-color: #f4f4f4; /*paper*/
   color: white;
   margin: 0px;
-  padding: 0;
+  padding: 0px;
 }
 
+h3 {
+  color: white;
+  margin-left: 10px;
+}
+
+h2 {
+  color: black;
+  margin-left: 30px;
+}
+
+.aboutText {
+  background-color: #373737; /*charcoal*/
+  border-radius: 20px;
+  padding: 20px;
+  color: white;
+}
+
+.topBar {
+  background-color: black;
+  color: white;
+  text-align: right;
+
+  height: 50px;
+  text
+}
+
+
+.tab {
+  color: white;
+}
+
+
+p {
+  padding: 10px;
+  color: white;
+}
 
 /* Style the tab */
 div.tab {
     overflow: hidden;
     /*border: 1px solid #ccc;*/
-    background-color: #f1f1f1;
+    background-color: #373737; /*Charcoal*/
     width: 100%;
     margin: 0px;
     padding: 0;
@@ -31,40 +77,56 @@ div.tab button {
     cursor: pointer;
     padding: 14px 16px;
     transition: 0.3s;
+    color: white;
 }
 
 /* Change background color of buttons on hover */
 div.tab button:hover {
-    background-color: #ddd;
+    background-color: #DCD0C0; /*Silk*/
+    color: black;
 }
 
 /* Create an active/current tablink class */
 div.tab button.active {
-    background-color: #ccc;
+    background-color: #C0B283; /*Pale Gold*/
+    color: black;
 }
+
 
 /* Style the tab content */
 .tabcontent {
     display: none;
-    padding: 6px 12px;
+    padding: 20px 40px;
     border: none;
     border-top: none;
 }
 
 
 
-input {
-  /*width: 100px;*/
-  text-align: left;
-  margin-left: 15px; 
+#calcInput {
+  padding: 30px;
+  background-color: #373737; /*Pale Gold*/
+  display: flex;
+  flex-direction: column;
+  width: 330px;
+  color: white;
+  border-radius: 40px;
 }
 
-.dayNumber {
-  /*text-align: center;*/
+.tp {
+  display: flex;
+  flex-direction: row;
 }
 
 .submit {
+  width: 70px;
   margin-top: 30px;
+  height: 30px;
+  border-radius: 5px;
+  background-color: white;
+  padding: 0px;
+  font-size: 16px;
+  margin-left: 250px;
 }
 
 .dayColumn {
@@ -75,16 +137,39 @@ table {
   margin: 50px;
   border-collapse: collapse;
   width: 700px;
+  color: white;
+}
+
+thead {
+  font-size: 20px;
+  font-weight: bold;
+  background-color: #373737;
+}
+
+.calc {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+tbody {
+  background-color: #C0B283;
+  color: black;
+}
+
+tr:nth-child(even) {
+  background-color: #373737;
+  color: white;
 }
 
 th, td, table {
-    border: 1px solid white;
+    border: 1px solid black;
     padding: 5px;
     text-align: center;
 }
 
-input [type="radio"] {
-  text-align: left;
-  /*width: 10px;*/
-  margin: 50px;
+.button {
+  margin-left: 15px;
+  margin-right: 5px;
+  background: #C0B283;
 }
