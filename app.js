@@ -28,6 +28,15 @@ document.getElementById("defaultOpen").click();
 
 document.getElementById("transitionPeriod").focus();
 
+function print(){
+                  var divToPrint=document.getElementById("table");
+                  newWin= window.open("");
+                  newWin.document.write('<html><head><title>Print it!</title></head><body><link rel="stylesheet" type="text/css" href="printstyles.css" ></body></html>');
+                  newWin.document.write(divToPrint.outerHTML);
+                  // newWin.print();
+                  // newWin.close();
+           }
+
 //create a function that adds a row to the table
 function addTable() {
   // Find a <table> element with id="myTable":

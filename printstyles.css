@@ -1,0 +1,79 @@
+/*
+COLOUR NOTES
+Charcoal      #373737
+Paper         #f4f4f4
+Silk          #DCD0C0
+Pale Gold     #C0B283
+*/
+
+
+@page {
+  margin: 2cm;
+  size: A4 portrait;
+}
+
+/*html {
+  /*background-color: #f4f4f4; /*Paper*/
+  font-family: sans-serif;
+  font-size: 18px;
+  /*padding: 0; */
+  background-image: url("clouds.jpg");
+  background-size: cover;
+}*/
+
+body {
+  /*background-color: #f4f4f4; /*paper*/
+  color: #f4f4f4;
+  margin: 50px;
+  padding: 0px;
+  font: 12px Georgia, "Times New Roman", Times, serif;
+  line-height: 1.3;
+  -webkit-print-color-adjust: exact;
+}
+
+/*h3 {
+  color: #f4f4f4;
+  margin-left: 10px;
+}
+
+h2 {
+  color: #f4f4f4;
+  margin-left: 0px;
+}*/
+
+
+
+
+table {
+  padding: 30px;
+  /*margin: 30px;*/
+  border-collapse: collapse;
+  /*width: 700px;*/
+  color: #373737;
+}
+
+thead {
+  font-size: 16pt;
+  font-weight: bold;
+  background-color: #DCD0C0;
+}
+
+.dayColumn {
+  width: 50px;
+}
+
+tbody {
+  background-color: #f4f4f4;
+  color: #373737;
+}
+
+tr:nth-child(even) {
+  background-color: #DCD0C0;
+  color: #373737;
+}
+
+th, td, table {
+    border: 1px solid black;
+    padding: 10px;
+    text-align: center;
+}

@@ -8,7 +8,8 @@
     <!-- Set up tabs -->
     <div class="tab">
       <button id = "firstTab" class="tablinks" onclick="openTab(event, 'About')">About</button>
-      <button id="defaultOpen" class="tablinks" onclick="openTab(event, 'Calculator')">Calculator</button>
+      <button id="defaultOpen" class="tablinks" onclick="openTab(event, 'Calculator');">Calculator</button>
+      <button id=printButton onclick = "print()" >Print Table</button>
     </div>
 
 
@@ -47,8 +48,10 @@
             <input  id="newFood" type ="number" placeholder = 0 min="0"><span style="margin-left:10px;">grams</span><br>
           </div>
 
-          <button class = "submit" onclick = "addTable()">Submit</button>
+          <button class = "submit" onclick = "addTable();">Submit</button>
         </div>
+
+
 
         <div id="table">
           <table id = "foodTable"></table>
