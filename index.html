@@ -1,7 +1,7 @@
 <html>
   <head>
     <title> Advice for changing you dog's food </title>
-  <head>
+  </head>
 
   <body>
     <!-- <div class="background-image"> </div> -->
@@ -21,6 +21,9 @@
           This handy tool will help you change your dog's food over a set period of time.
         </p>
       </div>
+      <div id=imageContainer>
+        <img src = "cordy.jpeg" id = "cordy">
+      </div>
     </div>
 
 
@@ -36,6 +39,11 @@
             <input  id = "transitionPeriod" type ="number" value = 1 min="0">
             <input id = "dayButton" class = "button" type = "radio" value="days" name="time" tabindex=-1> days
             <input id = "weekButton" class = "button" type = "radio" value="weeks" name="time" checked tabindex=-1> week(s)<br>
+          </div>
+          <br>
+          <span>Start Date</span><br>
+          <div>
+            <input  id = "startDate" type=date ><br>
           </div>
           <br>
           <span>Number of Meals per Day</span><br>

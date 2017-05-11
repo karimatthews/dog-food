@@ -37,8 +37,25 @@ function print(){
                   // newWin.close();
            }
 
+
 function dayFromDate() {
-  var d = new Date()
+  var dateString = document.getElementById("startDate").value;
+  // var pattern = "-";
+  // re = new RegExp(pattern, "g");
+  // // "year-mo-da"
+  // dateString.replace(/re/, ", ");
+
+  var year = dateString.slice(0, 4);
+  var month = dateString.slice(5, 7);
+  var day = dateString.slice(8, 10);
+
+  var date = year + ", " + month + ", " + day;
+
+  // var dateS = JSON.parse(date);
+
+  var d = new Date(date)
+  // d.setDate();
+// debugger
   var n = (d.getDay() + i) % 7;
   var weekday = new Array(7);
   weekday[0] = "Sunday";
