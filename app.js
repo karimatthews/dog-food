@@ -33,9 +33,25 @@ function print(){
                   newWin= window.open("");
                   newWin.document.write('<html><head><title>Print it!</title></head><body><link rel="stylesheet" type="text/css" href="printstyles.css" ></body></html>');
                   newWin.document.write(divToPrint.outerHTML);
-                  // newWin.print();
+                  newWin.print();
                   // newWin.close();
            }
+
+function dayFromDate() {
+  var d = new Date()
+  var n = (d.getDay() + i) % 7;
+  var weekday = new Array(7);
+  weekday[0] = "Sunday";
+  weekday[1] = "Monday";
+  weekday[2] = "Tuesday";
+  weekday[3] = "Wednesday";
+  weekday[4] = "Thursday";
+  weekday[5] = "Friday";
+  weekday[6] = "Saturday";
+
+  var day = weekday[n];
+  return day;
+}
 
 //create a function that adds a row to the table
 function addTable() {
@@ -73,32 +89,45 @@ function addTable() {
     var headRow = header.insertRow(0);
     // Insert new cells (<th> elements) at the 1st and 2nd position of the "new" <tr> element:
     var head1 = headRow.insertCell(0);
+    head1.className = "dayColumn"
     var head2 = headRow.insertCell(1);
     var head3 = headRow.insertCell(2);
+    var head4 = headRow.insertCell(3);
     // Add some text to the new cells:
-    head1.innerHTML = "Day";
-    head2.innerHTML = "Old Food";
-    head3.innerHTML = "New Food";
+    head1.innerHTML = "";
+    head2.innerHTML = "Day";
+    head3.innerHTML = "Old Food (per meal)";
+    head4.innerHTML = "New Food (per meal)";
   }
+
+  var numMeals = document.getElementById('numMeals').value;
 
   //create emmpty body element
   body = table.appendChild(document.createElement('tbody'));
   for (i = 0; i <= days; i++) {
     // Create an empty <tr> element and add it to the 1st position of the table:
     var row = body.insertRow(i);
-    var oldAmount = Math.round(oldTotalAmount / days * (days-i))
-    var newAmount = Math.round(newTotalAmount / days * (i))
+    var oldAmount = Math.round(oldTotalAmount / days * (days-i)) / numMeals;
+    var newAmount = Math.round(newTotalAmount / days * (i)) / numMeals;
 
     // Insert new cells (<td> elements) at the 1st and 2nd position of the "new" <tr> element:
     var cell1 = row.insertCell(0);
     cell1.className = "dayNumber"
     var cell2 = row.insertCell(1);
     var cell3 = row.insertCell(2);
+    var cell4 = row.insertCell(3);
+
+
+
+
+
+
 
     // Add some text to the new cells:
     cell1.innerHTML = i;
-    cell2.innerHTML = oldAmount + "   g";
-    cell3.innerHTML = newAmount + "  g";
+    cell2.innerHTML = dayFromDate();
+    cell3.innerHTML = oldAmount + "   g";
+    cell4.innerHTML = newAmount + "  g";
   }
 
 }
