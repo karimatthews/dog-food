@@ -33,7 +33,7 @@ function print(){
                   newWin= window.open("");
                   newWin.document.write('<html><head><title>Print it!</title></head><body><link rel="stylesheet" type="text/css" href="printstyles.css" ></body></html>');
                   newWin.document.write(divToPrint.outerHTML);
-                  newWin.print();
+                  // newWin.print();
                   // newWin.close();
            }
 
