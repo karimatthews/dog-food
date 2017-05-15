@@ -28,14 +28,16 @@ document.getElementById("defaultOpen").click();
 
 document.getElementById("transitionPeriod").focus();
 
-function print(){
-                  var divToPrint=document.getElementById("table");
-                  newWin= window.open("");
-                  newWin.document.write('<html><head><title>Print it!</title></head><body><link rel="stylesheet" type="text/css" href="printstyles.css" ></body></html>');
-                  newWin.document.write(divToPrint.outerHTML);
-                  // newWin.print();
-                  // newWin.close();
-           }
+function print() {
+  return function(){
+    var divToPrint=document.getElementById("table");
+    newWin= window.open("");
+    newWin.document.write('<html><head><title>Print it!</title></head><body><link rel="stylesheet" type="text/css" href="printstyles.css" ></body></html>');
+    newWin.document.write(divToPrint.outerHTML);
+    // newWin.print();
+    // newWin.close();
+  }
+}
 
 
 function dayFromDate() {
@@ -135,16 +137,18 @@ function addTable() {
     var cell4 = row.insertCell(3);
 
 
-
-
-
-
-
     // Add some text to the new cells:
     cell1.innerHTML = i;
     cell2.innerHTML = dayFromDate();
     cell3.innerHTML = oldAmount + "   g";
     cell4.innerHTML = newAmount + "  g";
   }
+
+  printButton = document.createElement("button");
+  printButton.id = "printButton";
+  printButton.className = "tabLinks";
+  printButton.innerHTML = "Print Table";
+  printButton.onclick = print();
+  document.getElementById("menu").appendChild(printButton);
 
 }

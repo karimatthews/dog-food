@@ -21,6 +21,13 @@ Pale Gold     #C0B283
     color: #f4f4f4;
     margin: 0px;
     padding: 0px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  div {
+    display: flex;
+    flex-direction: row;
   }
 
   h3 {
@@ -33,26 +40,38 @@ Pale Gold     #C0B283
     margin-left: 0px;
   }
 
+  #aboutStuff {
+    display: flex;
+    flex-direction: row;
+  }
+
   .aboutText {
     background-color: #373737; /*charcoal*/
     border-radius: 20px;
-    padding: 30px;
+    padding: 40px;;
     color: #f4f4f4;
+    height: auto;
+    width: 500px;
+    margin: 10px;
+    margin-right: 50px;
+    display: flex;
+    flex-direction: column;
   }
 
   #imageContainer {
     display: flex;
-    flex-direction: column;
-    margin: 40px;
+    flex-direction: row;
+    margin: 0px;
   }
 
   #cordy {
-    width: auto;
-    height: auto;
-    width: 600px;
-    height: 600px;
     border-radius: 20px;
     /*align-self: center;*/
+    margin: 10px;
+    display: flex;
+    flex-direction: row;
+    height: 500px;
+    width: 500px;
   }
 
   .tab {
@@ -61,7 +80,9 @@ Pale Gold     #C0B283
 
 
   p {
-    padding: 10px;
+    padding: 0px;
+    margin:0;
+    margin-top:20px;
     color: #f4f4f4;
   }
 
@@ -80,7 +101,7 @@ Pale Gold     #C0B283
   }
 
   #printButton {
-    /*margin-left: 500px;*/
+    margin-left: 1000px;
 
   }
 
@@ -112,7 +133,8 @@ Pale Gold     #C0B283
 
   /* Style the tab content */
   .tabcontent {
-      display: none;
+      display: flex;
+      flex-direction: column;
       padding: 20px 40px;
       border: none;
       border-top: none;

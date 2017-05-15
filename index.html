@@ -6,23 +6,33 @@
   <body>
     <!-- <div class="background-image"> </div> -->
     <!-- Set up tabs -->
-    <div class="tab">
+    <div id = "menu" class="tab">
       <button id = "firstTab" class="tablinks" onclick="openTab(event, 'About')">About</button>
       <button id="defaultOpen" class="tablinks" onclick="openTab(event, 'Calculator');">Calculator</button>
-      <button id=printButton onclick = "print()" >Print Table</button>
     </div>
 
 
 
     <div id="About" class="tabcontent">
-      <div class = "aboutText">
-        <h3>About</h3>
-        <p>
-          This handy tool will help you change your dog's food over a set period of time.
-        </p>
-      </div>
-      <div id=imageContainer>
-        <img src = "cordy.jpeg" id = "cordy">
+      <div id='aboutStuff'>
+        <div class = "aboutText">
+          <p>
+            Imagine your dog has been eating the same kibble for a few years,
+            then suddenly the food goes out of stock and you need to find an alternative.
+            Or maybe you regularly mix up your dog's food for a bit of variety and to balance the nutrients.
+          </p>
+          <p>
+            Whatever the reason, if you're introducing a new food to your dog, it's best to do it gradually by
+            slowly decreasing the old food and increasing the new.
+            Many people recommend transitiong over the course of a week, but some dogs will only need a few days, and others up to a month.
+          </p>
+          <p>
+            This tool will help you calculate the exact amounts to feed your dog.
+          </p>
+        </div>
+        <div id=imageContainer>
+          <img src = "cordy.jpeg" id = "cordy">
+        </div>
       </div>
     </div>
 
