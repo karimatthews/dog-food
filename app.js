@@ -18,7 +18,7 @@ function openTab(evt, tabName) {
     }
 
     // Show the current tab, and add an "active" class to the button that opened the tab
-    document.getElementById(tabName).style.display = "block";
+    document.getElementById(tabName).style.display = "flex";
     evt.currentTarget.className += " active";
 }
 
@@ -78,17 +78,18 @@ function addTable() {
   var table = document.getElementById("foodTable");
 
   //clear old data
-  var numberRows = document.getElementById('foodTable').rows.length - 1;
-
-  function deleteRows() {
-    for (i = numberRows; i > -1; i = i - 1) {
-      document.getElementById("foodTable").deleteRow(i)
+  function clearTable() {
+    var numberRows = document.getElementById('foodTable').rows.length - 1;
+    function deleteRows() {
+      for (i = numberRows; i > -1; i = i - 1) {
+        document.getElementById("foodTable").deleteRow(i)
+      }
+    }
+    if (numberRows > 0) {
+      deleteRows()
     }
   }
-
-  if (numberRows > 0) {
-    deleteRows()
-  }
+  clearTable();
 
   //define variables from inputs
   if (document.getElementById("dayButton").checked == true) {
@@ -126,8 +127,8 @@ function addTable() {
   for (i = 0; i <= days; i++) {
     // Create an empty <tr> element and add it to the 1st position of the table:
     var row = body.insertRow(i);
-    var oldAmount = Math.round(oldTotalAmount / days * (days-i)) / numMeals;
-    var newAmount = Math.round(newTotalAmount / days * (i)) / numMeals;
+    var oldAmount = Math.round(oldTotalAmount / days * (days-i) / numMeals);
+    var newAmount = Math.round(newTotalAmount / days * (i) / numMeals);
 
     // Insert new cells (<td> elements) at the 1st and 2nd position of the "new" <tr> element:
     var cell1 = row.insertCell(0);
@@ -138,10 +139,21 @@ function addTable() {
 
 
     // Add some text to the new cells:
-    cell1.innerHTML = i;
-    cell2.innerHTML = dayFromDate();
-    cell3.innerHTML = oldAmount + "   g";
-    cell4.innerHTML = newAmount + "  g";
+    function addText() {
+      cell1.innerHTML = i;
+      cell2.innerHTML = dayFromDate();
+      if (cell2.innerHTML == "undefined") {
+        alert("You must enter a start date");
+        clearTable();
+        return false;
+      }
+      cell3.innerHTML = oldAmount + "   g";
+      cell4.innerHTML = newAmount + "  g";
+      return true;
+    }
+    if (!addText()) {
+      return;
+    }
   }
 
   printButton = document.createElement("button");

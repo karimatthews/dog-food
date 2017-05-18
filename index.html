@@ -1,44 +1,39 @@
 <html>
   <head>
-    <title> Advice for changing you dog's food </title>
+    <title> Dog Food Calculator </title>
   </head>
 
   <body>
     <!-- <div class="background-image"> </div> -->
     <!-- Set up tabs -->
     <div id = "menu" class="tab">
-      <button id = "firstTab" class="tablinks" onclick="openTab(event, 'About')">About</button>
-      <button id="defaultOpen" class="tablinks" onclick="openTab(event, 'Calculator');">Calculator</button>
+      <button id = "firstTab" class="tablinks" onclick="openTab(event, 'about')">About</button>
+      <button id="defaultOpen" class="tablinks" onclick="openTab(event, 'calculator');">Calculator</button>
     </div>
 
 
 
-    <div id="About" class="tabcontent">
+    <div id="about" class="tabcontent">
       <div id='aboutStuff'>
         <div class = "aboutText">
           <p>
-            Imagine your dog has been eating the same kibble for a few years,
-            then suddenly the food goes out of stock and you need to find an alternative.
-            Or maybe you regularly mix up your dog's food for a bit of variety and to balance the nutrients.
-          </p>
-          <p>
-            Whatever the reason, if you're introducing a new food to your dog, it's best to do it gradually by
-            slowly decreasing the old food and increasing the new.
-            Many people recommend transitiong over the course of a week, but some dogs will only need a few days, and others up to a month.
-          </p>
-          <p>
-            This tool will help you calculate the exact amounts to feed your dog.
+            When changing your dog's food it's a bad idea to do it all at once.
+            This tool will help you calculate the exact amounts to feed your dog we're you're easing it onto another diet.
           </p>
         </div>
-        <div id=imageContainer>
-          <img src = "cordy.jpeg" id = "cordy">
+        <div class = "aboutText">
+          <p>
+            For advice on good quality kibble options I recommend checking out
+            <a href = "http://www.petfoodreviews.com.au/"> Pet Food Reviews</a>
+             or consulting a trusted vet.
+          </p>
         </div>
       </div>
     </div>
 
 
 
-    <div id="Calculator" class="tabcontent">
+    <div id="calculator" class="tabcontent">
 
 
       <div class = "calc">
@@ -46,29 +41,29 @@
           <h2>Calculator</h2>
           <span>Transition Period</span><br>
           <div class="tP">
-            <input  id = "transitionPeriod" type ="number" value = 1 min="0">
+            <input  id = "transitionPeriod" type ="number" value = 1 min="0" required>
             <input id = "dayButton" class = "button" type = "radio" value="days" name="time" tabindex=-1> days
             <input id = "weekButton" class = "button" type = "radio" value="weeks" name="time" checked tabindex=-1> week(s)<br>
           </div>
           <br>
           <span>Start Date</span><br>
           <div>
-            <input  id = "startDate" type=date ><br>
+            <input  id = "startDate" type=date required><br>
           </div>
           <br>
           <span>Number of Meals per Day</span><br>
           <div>
-            <input  id = "numMeals" type=number value=2><br>
+            <input  id = "numMeals" type=number value=2 required min=0><br>
           </div>
           <br>
           <span>Old food (daily intake)</span><br>
           <div class = "oF">
-            <input  id="oldFood" type="number" placeholder = 0 min="0"><span style="margin-left:10px;">grams</span><br>
+            <input  id="oldFood" type="number" placeholder = 0 min="0" required><span style="margin-left:10px;">grams</span><br>
           </div>
           <br>
           <span>New food (daily intake)</span><br>
           <div class = "nF">
-            <input  id="newFood" type ="number" placeholder = 0 min="0"><span style="margin-left:10px;">grams</span><br>
+            <input  id="newFood" type ="number" placeholder = 0 min="0" required><span style="margin-left:10px;">grams</span><br>
           </div>
 
           <button class = "submit" onclick = "addTable();">Submit</button>
